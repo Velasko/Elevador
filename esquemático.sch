@@ -56,6 +56,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -824,6 +825,105 @@ Based on the following sources:
 </deviceset>
 </devicesets>
 </library>
+<library name="transistor" urn="urn:adsk.eagle:library:402">
+<description>&lt;b&gt;Transistors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TO5" urn="urn:adsk.eagle:footprint:29828/1" library_version="2">
+<description>&lt;b&gt;TO 5&lt;/b&gt;</description>
+<wire x1="-4.0386" y1="-3.5306" x2="-3.5052" y2="-2.9972" width="0.127" layer="21"/>
+<wire x1="-2.9718" y1="-3.5306" x2="-3.5052" y2="-4.064" width="0.127" layer="21"/>
+<wire x1="-3.5052" y1="-4.064" x2="-4.0386" y2="-3.5306" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="4.572" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="3.8608" width="0.0508" layer="21"/>
+<pad name="1" x="0" y="-2.54" drill="0.8128" shape="octagon"/>
+<pad name="2" x="2.54" y="0" drill="0.8128" shape="octagon"/>
+<pad name="3" x="0" y="2.54" drill="0.8128" shape="octagon"/>
+<text x="-2.54" y="5.08" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.175" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="TO5" urn="urn:adsk.eagle:package:29895/1" type="box" library_version="2">
+<description>TO 5</description>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="NPN" urn="urn:adsk.eagle:symbol:29821/1" library_version="2">
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
+<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
+<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="2N1613" urn="urn:adsk.eagle:component:29967/1" prefix="T" library_version="2">
+<description>&lt;b&gt;NPN TRANSISTOR&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="NPN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO5">
+<connects>
+<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="G$1" pin="C" pad="3"/>
+<connect gate="G$1" pin="E" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:29895/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="docu-dummy" urn="urn:adsk.eagle:library:215">
+<description>Dummy symbols</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="RESISTOR" urn="urn:adsk.eagle:symbol:13162/1" library_version="1">
+<wire x1="-2.54" y1="-0.889" x2="2.54" y2="-0.889" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0.889" x2="-2.54" y2="0.889" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-0.889" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="0.889" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-0.889" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="0.889" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="R" urn="urn:adsk.eagle:component:13171/1" prefix="R" library_version="1">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -838,6 +938,9 @@ Based on the following sources:
 <part name="IC2" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*595" device="N" package3d_urn="urn:adsk.eagle:package:2009/1" technology="LS"/>
 <part name="IC3" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*32" device="D" package3d_urn="urn:adsk.eagle:package:2917/1" technology="LS"/>
 <part name="IC4" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*32" device="D" package3d_urn="urn:adsk.eagle:package:2917/1" technology="LS"/>
+<part name="T1" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N1613" device="" package3d_urn="urn:adsk.eagle:package:29895/1"/>
+<part name="T3" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N1613" device="" package3d_urn="urn:adsk.eagle:package:29895/1"/>
+<part name="R1" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1109,11 +1212,7 @@ Based on the following sources:
 <text x="-60.96" y="-7.62" size="1.778" layer="96">1</text>
 <text x="-50.8" y="-7.62" size="1.778" layer="96">2</text>
 <text x="-40.64" y="-7.62" size="1.778" layer="96">3</text>
-<text x="-93.98" y="-76.2" size="1.778" layer="96" rot="R90">Bluepill pin PA8</text>
-<text x="-88.9" y="-63.5" size="1.778" layer="96" rot="R90">GND</text>
-<text x="-88.9" y="-63.5" size="1.778" layer="96" rot="R90">GND</text>
 <text x="-78.74" y="-76.2" size="1.778" layer="96" rot="R90">Bluepill pin PA9</text>
-<text x="-101.6" y="-63.5" size="1.778" layer="96" rot="R90">VCC</text>
 <text x="-116.84" y="160.02" size="1.778" layer="96" rot="R90">Bluepill pin PA10</text>
 <text x="-43.18" y="162.56" size="1.778" layer="96" rot="R90">Bluepill pin PA11</text>
 <text x="132.08" y="55.88" size="1.778" layer="96">Saída porta OR</text>
@@ -1121,6 +1220,10 @@ Based on the following sources:
 <text x="132.08" y="45.72" size="1.778" layer="96">Shift Register 
 pin 10 e 11</text>
 <text x="132.08" y="50.8" size="1.778" layer="96">Shift Register pin 13</text>
+<text x="-104.14" y="-68.58" size="1.778" layer="96" rot="R180">Bluepill pin PA8</text>
+<text x="-101.6" y="-55.88" size="1.778" layer="97" rot="R90">VCC</text>
+<text x="-88.9" y="-78.74" size="1.778" layer="96" rot="R180">GND</text>
+<text x="-101.6" y="-58.42" size="1.778" layer="97">10K</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="81.28" y="60.96"/>
@@ -1131,6 +1234,9 @@ pin 10 e 11</text>
 <instance part="IC3" gate="D" x="-38.1" y="73.66" rot="R90"/>
 <instance part="IC4" gate="A" x="-116.84" y="139.7" rot="R90"/>
 <instance part="IC4" gate="B" x="-43.18" y="142.24" rot="R90"/>
+<instance part="T1" gate="G$1" x="30.48" y="5.08" rot="R90"/>
+<instance part="T3" gate="G$1" x="-96.52" y="-68.58"/>
+<instance part="R1" gate="G$1" x="-99.06" y="-58.42" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -1477,20 +1583,18 @@ pin 10 e 11</text>
 <wire x1="-96.52" y1="-50.8" x2="-93.98" y2="-50.8" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="A" pin="SCL"/>
 <wire x1="-93.98" y1="-50.8" x2="-93.98" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="-93.98" y1="-50.8" x2="-93.98" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="-50.8" x2="-93.98" y2="-63.5" width="0.1524" layer="91"/>
 <junction x="-93.98" y="-50.8"/>
+<pinref part="T3" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$63" class="0">
 <segment>
 <pinref part="IC2" gate="A" pin="RCK"/>
-<wire x1="-88.9" y1="-48.26" x2="-88.9" y2="-58.42" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$64" class="0">
-<segment>
-<pinref part="IC2" gate="A" pin="SER"/>
-<wire x1="-101.6" y1="-48.26" x2="-101.6" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="-48.26" x2="-88.9" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="-76.2" x2="-91.44" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="-76.2" x2="-91.44" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="-76.2" x2="-91.44" y2="-78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$65" class="0">
@@ -1578,6 +1682,27 @@ pin 10 e 11</text>
 <segment>
 <pinref part="IC1" gate="G$1" pin="PA8"/>
 <wire x1="116.84" y1="48.26" x2="129.54" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$64" class="0">
+<segment>
+<pinref part="T3" gate="G$1" pin="B"/>
+<wire x1="-99.06" y1="-68.58" x2="-104.14" y2="-68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$66" class="0">
+<segment>
+<pinref part="IC2" gate="A" pin="SER"/>
+<wire x1="-101.6" y1="-48.26" x2="-101.6" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-58.42" x2="-106.68" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="-58.42" x2="-106.68" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="-50.8" x2="-101.6" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$71" class="0">
+<segment>
+<pinref part="T3" gate="G$1" pin="E"/>
+<wire x1="-93.98" y1="-73.66" x2="-93.98" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
