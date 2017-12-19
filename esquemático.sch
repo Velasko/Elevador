@@ -950,6 +950,7 @@ Based on the following sources:
 <part name="R12" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
 <part name="R13" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
 <part name="T2" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N1613" device="" package3d_urn="urn:adsk.eagle:package:29895/1"/>
+<part name="R6" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1229,7 +1230,6 @@ Based on the following sources:
 pin 10 e 11</text>
 <text x="132.08" y="50.8" size="1.778" layer="96">Shift Register pin 13</text>
 <text x="-104.14" y="-68.58" size="1.778" layer="96" rot="R180">Bluepill pin PA8</text>
-<text x="-101.6" y="-55.88" size="1.778" layer="97" rot="R90">VCC</text>
 <text x="-88.9" y="-78.74" size="1.778" layer="96" rot="R180">GND</text>
 <text x="-101.6" y="-58.42" size="1.778" layer="97">10K</text>
 <text x="-157.48" y="30.48" size="1.778" layer="97" rot="R90">GND</text>
@@ -1243,6 +1243,9 @@ pin 10 e 11</text>
 <text x="-43.18" y="-68.58" size="1.778" layer="96" rot="R180">Bluepill pin PA9</text>
 <text x="-43.18" y="-68.58" size="1.778" layer="96" rot="R180">Bluepill pin PA9</text>
 <text x="-43.18" y="-68.58" size="1.778" layer="96" rot="R180">Bluepill pin PA9</text>
+<text x="-114.3" y="-53.34" size="1.778" layer="97" rot="R180">VCC</text>
+<text x="-43.18" y="-53.34" size="1.778" layer="97" rot="R180">VCC</text>
+<text x="-66.04" y="-53.34" size="1.778" layer="97">10K</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="81.28" y="60.96"/>
@@ -1265,6 +1268,7 @@ pin 10 e 11</text>
 <instance part="R12" gate="G$1" x="-86.36" y="45.72" rot="R90"/>
 <instance part="R13" gate="G$1" x="-83.82" y="45.72" rot="R90"/>
 <instance part="T2" gate="G$1" x="-68.58" y="-63.5" rot="R90"/>
+<instance part="R6" gate="G$1" x="-63.5" y="-53.34"/>
 </instances>
 <busses>
 </busses>
@@ -1632,9 +1636,12 @@ pin 10 e 11</text>
 <net name="N$65" class="0">
 <segment>
 <pinref part="IC2" gate="A" pin="G"/>
-<wire x1="-78.74" y1="-48.26" x2="-78.74" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="-48.26" x2="-78.74" y2="-53.34" width="0.1524" layer="91"/>
 <pinref part="T2" gate="G$1" pin="C"/>
+<wire x1="-78.74" y1="-53.34" x2="-78.74" y2="-60.96" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="-60.96" x2="-73.66" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="-53.34" x2="-68.58" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="-78.74" y="-53.34"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -1760,8 +1767,11 @@ pin 10 e 11</text>
 <pinref part="IC2" gate="A" pin="SER"/>
 <wire x1="-101.6" y1="-48.26" x2="-101.6" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="-104.14" y1="-58.42" x2="-106.68" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="-106.68" y1="-58.42" x2="-106.68" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="-58.42" x2="-106.68" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="-53.34" x2="-106.68" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="-50.8" x2="-101.6" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="-53.34" x2="-114.3" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="-106.68" y="-53.34"/>
 </segment>
 </net>
 <net name="N$71" class="0">
@@ -1815,6 +1825,11 @@ pin 10 e 11</text>
 <pinref part="T2" gate="G$1" pin="B"/>
 <wire x1="-68.58" y1="-66.04" x2="-68.58" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="-68.58" y1="-71.12" x2="-60.96" y2="-71.12" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$73" class="0">
+<segment>
+<wire x1="-58.42" y1="-53.34" x2="-48.26" y2="-53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
